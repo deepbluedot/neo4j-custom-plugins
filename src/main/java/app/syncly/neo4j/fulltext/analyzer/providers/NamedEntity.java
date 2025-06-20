@@ -9,7 +9,7 @@ import app.syncly.neo4j.fulltext.analyzer.NamedEntityAnalyzer;
 
 @ServiceProvider
 public class NamedEntity extends AnalyzerProvider {
-    public static final String NAMED_ENTITY_ANALYZER_NAME = "named-entity-analyzer";
+    public static final String NAMED_ENTITY_ANALYZER_NAME = "named-entity";
 
     public NamedEntity() {
         super(NAMED_ENTITY_ANALYZER_NAME);
