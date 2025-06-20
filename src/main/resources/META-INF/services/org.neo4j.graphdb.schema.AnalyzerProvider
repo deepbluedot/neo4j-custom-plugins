@@ -1,1 +1,1 @@
-app.syncly.neo4j.fulltext.analyzer.providers.NamedEntityAnalyzerProvider
+app.syncly.neo4j.fulltext.analyzer.providers.NamedEntity
