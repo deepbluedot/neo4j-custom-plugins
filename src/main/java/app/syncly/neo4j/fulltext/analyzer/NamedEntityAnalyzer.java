@@ -60,8 +60,8 @@ public class NamedEntityAnalyzer extends StopwordAnalyzerBase {
         }, tok);
     }
 
-    // @Override
-    // protected TokenStream normalize(String fieldName, TokenStream in) {
-    // return new LowerCaseFilter(in);
-    // }
+    @Override
+    protected Reader initReader(String fieldName, Reader reader) {
+        return new PhonemeDecompositionCharFilter(reader);
+    }
 }

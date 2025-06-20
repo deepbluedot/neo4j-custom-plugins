@@ -15,7 +15,7 @@ import java.util.List;
 public class NamedEntityAnalyzerTest {
     @Test
     public void testAnalyzerOutput() throws IOException {
-        String[] inputs = { "Hello World!", "A.B#C", "TeSt\t123" };
+        String[] inputs = { "Hello World!", "A.B#C", "안녕ㅎ ㅏ세?요!", "TeSt\t123갉낪닳" };
         Analyzer analyzer = new NamedEntityAnalyzer(ENGLISH_STOP_WORDS_SET);
         List<String> tokenList = new ArrayList<>();
         for (String input : inputs) {
@@ -24,7 +24,8 @@ public class NamedEntityAnalyzerTest {
             System.out.println("Input: " + input);
             System.out.println("Tokens: " + tokens);
         }
-        assertArrayEquals(tokenList.toArray(), new String[] { "helloworld", "abc", "test123" });
+        assertArrayEquals(tokenList.toArray(),
+                new String[] { "helloworld", "abc", "ㅇㅏㄴㄴㅕㅇㅎㅏㅅㅔㅇㅛ", "test123ㄱㅏㄺㄴㅏㅄㄷㅏㅀ" });
     }
 
     private List<String> analyzeText(Analyzer analyzer, String text) throws IOException {
